@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <div class="header">
+    <h2>MQTT</h2>
+    <h2>My MQTT web App</h2>
+    <body>
+    <div class="row">
+        <center>
+        <div class="column">
+            <div class="container">
+                <h1 class="card-header text-center ">Broker</h1>
+              
+                    <label>Address:</label>
+                    <input type="text" id="address" value="wss://test.mosquitto.org:8081/mqtt"><br>
+                    <button id="connected_btn"  class="btn btn-default">Connect</button>
+                    <button id="disconnected_btn" class="btn btn-default">Disconnect</button><br>
+                    <label>Status: </label><br>
+                    <input type="text" id ="status" value="Disconnected!">
+                 
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+               <h1 class="card-header  text-center ">Publish</h1>
+              
+                    <label>Topic:</label>
+                    <input type="text" id="topicPublish"><br>
+                    <label>Payload: </label><br>
+                    <input type="text" id="payload">
+                    <button id="publish_btn" class="btn btn-default">Publish</button><br>
+                 
+            </div>
+        </div>
+        <div class="column">
+            <div class="container">
+                 <h1 class="card-header  text-center ">Subscribe</h1>
+              
+                    <label>Topic:</label>
+                    <input type="text" id="topicSubscribe"><br>
+                    <button id="subscribe_btn" class="btn btn-default">Subscribe</button>
+                    <button type="unsubscribe_btn" class="btn btn-default">UnSubscribe</button><br>
+                    <label>Status: </label>
+                    <input type="text" id="subscribed" value="UnSubscribe">
+                 
+            </div>
+        </div>
+
+    <center>
+        <div class="out">
+            <div class="card-header"><br>
+                <div class="text-center h4" id="head">-------Incoming Message-------</div>
+            </div>
+
+        <br>
+        <div class="table card-body" id="table">
+            <table id="tab">
+                    <tr>
+                        <th>Topic</th>
+                        <th>Payload</th>
+                        <th>Time Stamp</th>
+                    </tr>
+            </table>
+            <br>
+    
+        </div>
+        </div>
+    </center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs="     
+        crossorigin="anonymous"></script>
+   <script src = scripts/browser-mqtt.js></script>
+   <script src = scripts/controller.js></script>   
+</body>
+
+<style>
+body {
+  background-image:url(https://cdn02.plentymarkets.com/2brofzsczyt8/item/images/154481/full/Disney-Fototapete-Feen-bunt-360x254-cm-FTD-2222-15.jpg); 
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.header {
+  text-align: center;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color:black;
+  }
+  
+  input {
+    width: 100%;
+    color: transparent;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+  }
+
+  * {
+    box-sizing: border-box;
+
+  }
+  .out {
+  margin-top: 30%;
+  border:  3px solid #329dba;
+  width: 100%;
+  background-color: transparent;
+}
+  
+  .container {
+    border: 3px solid #329dba;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 20px;
+    width:440px;
+    height: 350px;
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+</html>
